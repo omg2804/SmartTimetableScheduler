@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Demo - Embeddable Version</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 30px;
+        }
+        .embed-container {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+        }
+        .info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .info h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b6b;
+        }
+        .feature h4 {
+            color: #333;
+            margin-top: 0;
+        }
+        .btn {
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Academic Timetable System</h1>
+            <p>Comprehensive timetable management with UG+PG support and biweekly switching</p>
+        </div>
+        
+        <div class="content">
+            <div class="info">
+                <h3>🚀 Live Demo</h3>
+                <p>This is a live demonstration of the embeddable timetable system. You can interact with all features including:</p>
+                <ul>
+                    <li>Biweekly switching (Odd/Even weeks)</li>
+                    <li>Program filtering (UG/PG)</li>
+                    <li>Batch and faculty filtering</li>
+                    <li>Multiple views (Timetable, Quizzes, Electives, Work)</li>
+                </ul>
+            </div>
+
+            <div class="embed-container">
+                <iframe src="http://localhost:8000/embed"></iframe>
+            </div>
+
+            <div class="info">
+                <h3>💻 How to Embed</h3>
+                <p>To embed this timetable in your own website, use the following code:</p>
+                <div class="code-block">
+&lt;iframe 
+  src="http://localhost:8000/embed" 
+  width="100%" 
+  height="700px" 
+  frameborder="0"&gt;
+&lt;/iframe&gt;
+                </div>
+                <p><strong>Note:</strong> Replace <code>localhost:8000</code> with your actual domain when deploying.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <h4>🎓 UG + PG Support</h4>
+                    <p>Separate handling for undergraduate and postgraduate programs with dedicated filtering options.</p>
+                </div>
+                <div class="feature">
+                    <h4>📅 Biweekly Switching</h4>
+                    <p>Toggle between odd and even weeks for alternating schedules, perfect for alternating lab sessions.</p>
+                </div>
+                <div class="feature">
+                    <h4>🧠 Smart Features</h4>
+                    <p>Track upcoming quizzes, manage elective courses, and monitor work assignments all in one place.</p>
+                </div>
+                <div class="feature">
+                    <h4>📱 Responsive Design</h4>
+                    <p>Works seamlessly on desktop, tablet, and mobile devices with modern, intuitive interface.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="http://localhost:5173" class="btn" target="_blank">Open Full Application</a>
+                <a href="http://localhost:8000/embed" class="btn" target="_blank">View Embed Version</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Timetable Demo loaded successfully!');
+            
+            // Add click tracking for analytics
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    console.log('Button clicked:', this.textContent);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
