@@ -1,9 +1,4 @@
-const express = require('express');
-const cors = require('cors');
-
-const app = express();
-app.use(cors());
-app.use(express.json());
+// Vercel serverless function for timetable generation
 
 // Function to generate mock timetable based on input
 function generateMockTimetable(inputData) {
