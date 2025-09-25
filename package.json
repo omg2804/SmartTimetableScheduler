@@ -1,0 +1,19 @@
+{
+  "name": "smart-timetable-scheduler",
+  "version": "1.0.0",
+  "description": "AI-Powered Timetable Management System",
+  "private": true,
+  "scripts": {
+    "dev": "cd newer && npm run dev",
+    "build": "cd newer && npm run build",
+    "preview": "cd newer && npm run preview",
+    "install:all": "npm install && cd newer && npm install",
+    "vercel-build": "cd newer && npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["timetable", "scheduling", "education", "ai", "react", "vite"],
+  "author": "Timetable Team",
+  "license": "MIT"
+}

@@ -347,7 +347,7 @@ export function TimetableGrid() {
     try {
       // Call the backend API to generate timetable using CP-SAT solver
       console.log("Sending request to backend...", data);
-      const response = await fetch("http://localhost:8001/generate", {
+      const response = await fetch("/api/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
