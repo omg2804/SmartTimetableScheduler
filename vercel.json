@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "buildCommand": "cd newer && npm run build",
-  "outputDirectory": "newer/build",
   "builds": [
+    {
+      "src": "newer/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    },
     {
       "src": "api/**/*.js",
       "use": "@vercel/node",
@@ -18,11 +23,11 @@
     },
     {
       "src": "/embed",
-      "dest": "/index.html"
+      "dest": "/newer/build/index.html"
     },
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/newer/build/$1"
     }
   ]
 }
